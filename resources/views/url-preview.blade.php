@@ -6,7 +6,6 @@
 
         <title>Url Preview</title>
 
-
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
@@ -66,13 +65,14 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            <form action="{!!url('fetch-url-details')!!}" method="POST">
-                {!!csrf_field()!!}
-                
-                <input type="text" name="url" placeholder="Please enter a valid url"/><br/>
-                <span>{!!$errors->first('url')!!}</span><br/>
-                <input type="submit" value="submit"/>
-            </form>
+            <div >
+                <h1>{!!$info->title!!}</h1>
+                <img src="{!!$info->image!!}"/>
             </div>
+            <div>
+                <a href="{!!url('/')!!}" >Go Back</a>
+            </div>
+                
+        </div>
     </body>
 </html>
